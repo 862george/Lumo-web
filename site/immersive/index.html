@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lumo</title>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Manrope:wght@500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E0C0B;--card:rgba(26,22,20,.82);--line:#3A332F;--red:#E5252A;--text:#fff;--muted:#C9C2BD}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;line-height:1.6}
+a{color:inherit}
+h1,h2,h3{font-family:'Unbounded',sans-serif;font-weight:600;line-height:1.15;margin:0}
+#gl{position:fixed;left:0;top:0;width:100%;height:100%;height:100lvh;z-index:0;pointer-events:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.price .was{font-size:.55em;color:var(--muted);margin-right:4px}
+@media (max-width:820px),(pointer:coarse){.card,.price,form{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(26,22,20,.93)}}
+.nogl::before{content:"";position:fixed;right:8%;top:22%;width:280px;height:280px;border-radius:50%;z-index:0;background:radial-gradient(circle at 35% 30%,#FF6A6E,#E5252A 45%,#7A0C10);box-shadow:0 0 120px 20px rgba(229,37,42,.4)}
+.nogl #gl{display:none}
+main,nav,footer{position:relative;z-index:1}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+nav{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:24px 0}
+.logo{font-family:'Unbounded',sans-serif;font-weight:600;font-size:26px;text-decoration:none}
+.logo b{color:var(--red)}
+.logo small{font-size:11px;letter-spacing:.5em;color:var(--red);margin-left:6px}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font:800 16px 'Manrope',sans-serif;padding:15px 30px;border-radius:999px;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.hero{min-height:78vh;display:flex;flex-direction:column;justify-content:center;gap:22px;max-width:560px}
+.hero h1{font-size:clamp(34px,6vw,56px)}
+.hero h1 span{color:var(--red)}
+.hero p{font-size:19px;color:var(--muted);margin:0 0 6px}
+h2{font-size:28px;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--card);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:20px;padding:28px}
+.card .n{color:var(--red);font-family:'Unbounded',sans-serif}
+.card h3{font-size:18px;margin:10px 0 6px}
+.card p{margin:0;color:var(--muted)}
+.start{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;align-items:start}
+.price{background:var(--card);backdrop-filter:blur(6px);border:2px solid var(--red);border-radius:24px;padding:32px}
+.price .big{font-family:'Unbounded',sans-serif;font-size:44px}
+.price .big small{font-size:16px;color:var(--muted)}
+.price p{color:var(--muted);margin:12px 0 0}
+.price .then{padding-top:18px;border-top:1px solid var(--line);font-size:18px}
+.price .then b{color:var(--red);font-family:'Unbounded',sans-serif}
+.price ul{padding-left:20px;color:var(--muted);margin:16px 0 0}
+form{background:var(--card);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px}
+label{display:flex;flex-direction:column;gap:6px;font-weight:800;font-size:14px}
+.lbl em{font-style:normal;font-weight:500;color:var(--muted);margin-left:6px}
+input{font:500 16px 'Manrope',sans-serif;color:#fff;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px}
+input:focus{outline:2px solid var(--red);outline-offset:1px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.hp{position:absolute;left:-9999px}
+.status{min-height:24px;font-weight:800;color:#FF8A8D}
+.note{font-size:13px;color:var(--muted);margin:0}
+footer{padding:48px 0 56px;color:#8A817B;font-size:14px;border-top:1px solid var(--line);background:rgba(14,12,11,.9)}
+.foot{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.social{display:flex;gap:12px;justify-content:center}
+.social a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);color:var(--muted);text-decoration:none}
+.social a:hover{color:#fff;border-color:var(--red)}
+.social a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.flogo{display:flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1}
+.flogo .fl{font-family:'Unbounded',sans-serif;font-weight:600;font-size:56px;letter-spacing:-.02em;color:#fff}
+.flogo .fl b{color:var(--red)}
+.flogo .fw{font-family:'Unbounded',sans-serif;font-weight:600;font-size:13px;letter-spacing:.7em;margin:10px -.7em 0 0;color:var(--red)}
+.legal{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;font-weight:800;color:var(--muted)}
+.legal a{text-decoration:none}.legal a:hover,.foot a:hover{color:#fff}
+.foot p{margin:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="wrap">
+<nav>
+<a class="logo" href="../">lum<b>o</b><small>WEB</small></a>
+<a class="btn" href="#start">Get started</a>
+</nav>
+</div>
+<main>
+<div class="wrap">
+<header class="hero" id="top">
+<h1>A website your customers <span>step into.</span></h1>
+<p>An immersive website with custom 3D animation and scenes that captivate customers the moment they arrive.</p>
+<div><a class="btn" href="#start">Kick-start your site</a></div>
+</header>
+
+<section><h2>What you get</h2>
+<div class="grid">
+<div class="card"><span class="n">01</span><h3>3D animation</h3><p>An eye-catching animated 3D scene on your website that makes your business memorable.</p></div>
+<div class="card"><span class="n">02</span><h3>Made for your business</h3><p>Clean, mobile-friendly pages, designed around your business and your colours.</p></div>
+<div class="card"><span class="n">03</span><h3>Priority support</h3><p>Questions or changes to your site? Your requests go to the front of the queue.</p></div>
+</div></section>
+
+<section id="start"><h2>Pricing</h2>
+<div class="start">
+<div class="price">
+<div class="big"><s class="was"><span class="sr">Was </span>£250</s> <span class="sr">now </span>£230 <small>setup fee</small></div>
+<p>A one-off fee to design and build your immersive website. We’ll confirm the exact price in writing before we start.</p>
+<p class="then"><b>then £25/month</b><br><span>for hosting, small updates and support. Cancel any time.</span></p>
+<ul><li>Custom 3D animation and scenes</li><li>Pages designed around your business and colours</li><li>Priority support for your site</li><li>A mock-up to look at first</li></ul>
+</div>
+<form data-form="Immersive kick-off" novalidate>
+<h3 style="font-size:20px">Kick-start your site</h3>
+<input type="hidden" name="form_type" value="Immersive kick-off">
+<input type="hidden" name="subject" value="New Lumo Web IMMERSIVE enquiry">
+<label>Name<input name="name" autocomplete="name" required></label>
+<label>Email<input name="email" type="email" autocomplete="email" required></label>
+<label><span class="lbl">Phone <em>optional</em></span><input name="phone" type="tel" autocomplete="tel"></label>
+<div class="hp" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+<button class="btn" type="submit">Send my details</button>
+<div class="status" role="status" aria-live="polite"></div>
+<p class="note">We’ll only use your details to reply about your website, and we won’t share them.</p>
+</form>
+</div></section>
+</div>
+</main>
+
+<footer><div class="wrap foot">
+<a class="flogo" href="../" aria-label="Lumo Web home"><span class="fl">lum<b>o</b></span><span class="fw">WEB</span></a>
+<div class="social">
+<a href="https://www.instagram.com/lumoweb.uk/" target="_blank" rel="noopener" aria-label="Lumo Web on Instagram, @lumoweb.uk" title="Instagram @lumoweb.uk"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
+<a href="https://www.tiktok.com/@lumoweb.uk" target="_blank" rel="noopener" aria-label="Lumo Web on TikTok, @lumoweb.uk" title="TikTok @lumoweb.uk"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+</div>
+<div class="legal"><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../cookies.html">Cookie Notice</a></div>
+<p>© 2026 Lumo Web · lumoweb.uk · <a href="mailto:contact@lumoweb.uk">contact@lumoweb.uk</a></p>
+</div></footer>
+
+<script>
+const ACCESS_KEY="3e4a5492-6895-48c5-baa2-1a1f72392342";
+document.querySelectorAll("form[data-form]").forEach(f=>{
+f.addEventListener("submit",async e=>{
+e.preventDefault();
+const s=f.querySelector(".status");
+if(!f.checkValidity()){f.reportValidity();return;}
+const d=new FormData(f);
+if(d.get("website")){return;}
+if(!ACCESS_KEY||ACCESS_KEY==="YOUR_ACCESS_KEY"){
+const body=[...d.entries()].filter(([k])=>!["website","subject","form_type"].includes(k)).map(([k,v])=>k+": "+v).join("\n");
+location.href="mailto:contact@lumoweb.uk?subject="+encodeURIComponent("Lumo Web: "+f.dataset.form)+"&body="+encodeURIComponent(body);
+s.textContent="Opening your email app…";return;}
+d.delete("website");
+d.append("access_key",ACCESS_KEY);
+d.append("from_name",d.get("name")||"Website visitor");
+s.style.color="#C9C2BD";s.textContent="Sending…";
+try{
+const r=await fetch("https://api.web3forms.com/submit",{method:"POST",body:d,headers:{Accept:"application/json"}});
+const j=await r.json();
+if(!r.ok||!j.success)throw new Error();
+f.reset();s.style.color="#8FE3A6";s.textContent="Thanks! We’ll be in touch soon.";
+}catch(_){s.style.color="#FF8A8D";s.textContent="Sorry, that didn’t send. Please email contact@lumoweb.uk.";}
+});
+});
+
+/* 3D scene: plain WebGL, no libraries. Tuned to stay smooth on phones: fewer points, 1x pixel density, capped frame rate, no per-frame layout reads. */
+(function(){
+const cv=document.getElementById("gl");
+const coarse=matchMedia("(pointer:coarse)").matches||Math.min(innerWidth,innerHeight)<700;
+const gl=cv.getContext("webgl",{antialias:!coarse,alpha:false});
+if(!gl){document.body.classList.add("nogl");return;}
+const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const dpr=coarse?1:Math.min(window.devicePixelRatio||1,2);
+const K=coarse?380:700,P=coarse?450:1300;
+const SZ=coarse?{p:30,a:210,b:75}:{p:40,a:260,b:90};
+function sh(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return s;}
+const pr=gl.createProgram();
+gl.attachShader(pr,sh(gl.VERTEX_SHADER,"attribute vec3 p;attribute float a;uniform mat4 m;uniform float s;varying float va;void main(){vec4 q=m*vec4(p,1.0);gl_Position=q;gl_PointSize=s/q.w;va=a;}"));
+gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,"precision mediump float;uniform vec4 c;uniform float pt;varying float va;void main(){float al=c.a*va;if(pt>.5){float d=length(gl_PointCoord-.5)*2.;if(d>1.)discard;al*=pow(1.-d,1.5);}gl_FragColor=vec4(c.rgb,al);}"));
+gl.linkProgram(pr);
+if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){document.body.classList.add("nogl");return;}
+gl.useProgram(pr);
+const L={m:gl.getUniformLocation(pr,"m"),s:gl.getUniformLocation(pr,"s"),c:gl.getUniformLocation(pr,"c"),pt:gl.getUniformLocation(pr,"pt"),p:gl.getAttribLocation(pr,"p"),a:gl.getAttribLocation(pr,"a")};
+function buf(arr){const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(arr),gl.STATIC_DRAW);return b;}
+const knot=[];
+for(let i=0;i<K;i++){const t=i/K*Math.PI*2,r=.5*(2+Math.cos(3*t));knot.push(1.3*r*Math.cos(2*t),1.3*r*Math.sin(2*t),1.3*.5*Math.sin(3*t),1);}
+const parts=[];
+for(let i=0;i<P;i++){const u=Math.random()*2-1,th=Math.random()*Math.PI*2,rad=2.6+Math.random()*3.2,q=Math.sqrt(1-u*u);parts.push(rad*q*Math.cos(th),rad*u,rad*q*Math.sin(th),.2+Math.random()*.6);}
+const kb=buf(knot),pb=buf(parts);
+gl.enableVertexAttribArray(L.p);gl.enableVertexAttribArray(L.a);
+function draw(b,mode,n,col,pt,size){
+gl.bindBuffer(gl.ARRAY_BUFFER,b);
+gl.vertexAttribPointer(L.p,3,gl.FLOAT,false,16,0);
+gl.vertexAttribPointer(L.a,1,gl.FLOAT,false,16,12);
+gl.uniform4fv(L.c,col);gl.uniform1f(L.pt,pt);gl.uniform1f(L.s,size);
+gl.drawArrays(mode,0,n);}
+function mul(a,b){const o=new Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++){let s=0;for(let k=0;k<4;k++)s+=a[k*4+r]*b[c*4+k];o[c*4+r]=s;}return o;}
+function persp(asp){const f=1/Math.tan(.39),n=.1,fa=60;return[f/asp,0,0,0,0,f,0,0,0,0,(fa+n)/(n-fa),-1,0,0,2*fa*n/(n-fa),0];}
+function rotY(a){const c=Math.cos(a),s=Math.sin(a);return[c,0,-s,0,0,1,0,0,s,0,c,0,0,0,0,1];}
+function rotX(a){const c=Math.cos(a),s=Math.sin(a);return[1,0,0,0,0,c,s,0,0,-s,c,0,0,0,0,1];}
+function trans(x,y,z){return[1,0,0,0,0,1,0,0,0,0,1,0,x,y,z,1];}
+let W=1,H=1,CH=1,lastW=0,maxS=1,sy=scrollY,scS=scrollY;
+function calc(){maxS=Math.max(1,document.documentElement.scrollHeight-innerHeight);}
+function resize(force){
+const w=cv.clientWidth,h=cv.clientHeight;
+if(!force&&coarse&&w===lastW){calc();return;}
+lastW=w;CH=h;W=cv.width=Math.max(1,Math.floor(w*dpr));H=cv.height=Math.max(1,Math.floor(h*dpr));
+gl.viewport(0,0,W,H);calc();
+}
+let mx=0,my=0,tx=0,ty=0;
+addEventListener("pointermove",e=>{tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5;},{passive:true});
+addEventListener("scroll",()=>{sy=scrollY;if(reduce){scS=sy;render(2000);}},{passive:true});
+addEventListener("resize",()=>{resize(false);if(reduce)render(2000);});
+addEventListener("load",calc);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(calc);
+gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);
+function render(ms){
+const t=ms/1000;
+mx+=(tx-mx)*.05;my+=(ty-my)*.05;
+const sc=Math.min(1,scS/maxS);
+const asp=W/H,wide=asp>1.1;
+const hero=Math.max(0,1-scS/CH);
+const x=wide?2.2*hero:0,y=wide?0:4.2*hero;
+const dist=(wide?8:17)-sc*(wide?3:4);
+const view=mul(trans(x,y,-dist),mul(rotX(.35+my*.5+sc*1.2),rotY(t*.18+mx*.9+sc*3)));
+gl.uniformMatrix4fv(L.m,false,new Float32Array(mul(persp(asp),view)));
+gl.clearColor(.055,.047,.043,1);gl.clear(gl.COLOR_BUFFER_BIT);
+draw(pb,gl.POINTS,P,[1,.85,.85,.9],1,SZ.p*dpr);
+draw(kb,gl.LINE_LOOP,K,[.9,.15,.17,.35],0,1);
+draw(kb,gl.POINTS,K,[.9,.15,.17,.6],1,SZ.a*dpr);
+if(!coarse)draw(kb,gl.POINTS,K,[1,.5,.5,.7],1,SZ.b*dpr);
+}
+let last=0;
+function loop(ms){
+requestAnimationFrame(loop);
+if(document.hidden)return;
+if(coarse&&ms-last<28)return;
+last=ms;
+scS+=(sy-scS)*.12;
+render(ms);
+}
+resize(true);
+if(reduce){render(2000);}else{requestAnimationFrame(loop);}
+})();
+</script>
+</body>
+</html>

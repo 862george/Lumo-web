@@ -1,0 +1,7 @@
+/immersive/*
+  X-Robots-Tag: noindex, nofollow
+
+/securecheckout/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+  Referrer-Policy: no-referrer
