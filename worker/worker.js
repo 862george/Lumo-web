@@ -71,6 +71,8 @@ export default {
       return json({ status: r.data.status, email: r.data.customer_details && r.data.customer_details.email });
     }
 
+    // Everything else is the website itself (served from the `site` folder).
+    if (env.ASSETS) return env.ASSETS.fetch(req);
     return new Response("Not found", { status: 404 });
   },
 };

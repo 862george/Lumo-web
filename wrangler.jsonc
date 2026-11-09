@@ -1,0 +1,13 @@
+{
+  // One Worker serves the whole SynthPage site (the `site` folder) and the checkout API (/api/*).
+  "name": "synthpage",
+  "main": "worker/worker.js",
+  "compatibility_date": "2026-11-04",
+  // Keep the Stripe keys and price IDs you set in the Cloudflare dashboard when this deploys.
+  "keep_vars": true,
+  "assets": {
+    "directory": "./site",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  }
+}

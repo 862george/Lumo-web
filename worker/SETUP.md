@@ -1,4 +1,8 @@
-# SynthPage checkout API: setup (5 minutes)
+# SynthPage: Worker setup
+
+**Current setup:** the repo deploys as ONE Worker called `synthpage` (see `wrangler.jsonc` in the repo root). It serves the website and the checkout API together, so no separate route is needed. Add the settings in step 2 to the `synthpage` Worker, then add `synthpage.co.uk` as a Custom Domain on it. Steps 1 and 3 below are only for the older, separate checkout Worker.
+
+(Older instructions follow.)
 
 The Worker in `worker.js` creates the Stripe checkout for the three payment pages. It keeps your secret key off the website.
 
