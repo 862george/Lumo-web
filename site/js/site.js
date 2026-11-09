@@ -43,6 +43,9 @@ d.getElementById("prev").onclick=function(){go(cur()-1)};
 d.getElementById("next").onclick=function(){go(cur()+1)};
 track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();go(cur()+1)}if(e.key==="ArrowLeft"){e.preventDefault();go(cur()-1)}});
 }
+/* FAQ: only one open at a time */
+var fq=[].slice.call(d.querySelectorAll(".faq details"));
+fq.forEach(function(x){x.addEventListener("toggle",function(){if(x.open)fq.forEach(function(y){if(y!==x)y.open=false})})});
 /* plan buttons preselect the form */
 [].slice.call(d.querySelectorAll("[data-plan]")).forEach(function(a){a.addEventListener("click",function(){var s=d.querySelector('select[name="package"]');if(s)s.value=a.getAttribute("data-plan")})});
 /* forms */

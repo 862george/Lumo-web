@@ -19,6 +19,8 @@ Add these. Use "Secret" for the first one.
 | PRICE_IMMERSIVE_MONTHLY | Text | price_1UZFil3Y0yZc9OEhCSGfYkw3 |
 | PRICE_FAMILY_MONTHLY | Text | price_1UZFjs3Y0yZc9OEhtmHeJRv7 |
 
+Note: the Advanced plan (formerly called Immersive) still uses the `PRICE_IMMERSIVE_*` variable names and the plan key `immersive` inside the Worker, so you don't need to rename anything. Customers only see the product names set in Stripe, which are now "SynthPage Basic website", "SynthPage Advanced website" and "SynthPage Family plan".
+
 ## 3. Point synthpage.co.uk/api/* at the Worker
 Worker > Settings > Domains & Routes > Add > Route: `synthpage.co.uk/api/*`, zone `synthpage.co.uk`.
 
