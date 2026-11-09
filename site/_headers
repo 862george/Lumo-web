@@ -1,5 +1,9 @@
-/immersive/*
-  X-Robots-Tag: noindex, nofollow
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
 
 /securecheckout/*
   X-Robots-Tag: noindex, nofollow

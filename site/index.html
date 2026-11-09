@@ -3,290 +3,158 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lumo</title>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="description" content="Clean, fast one-page websites for local businesses. Get a free mock-up before you decide anything.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&family=Manrope:wght@500;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0E0C0B;--card:#1A1614;--line:#3A332F;--red:#E5252A;--text:#fff;--muted:#C9C2BD}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;line-height:1.6}
-a{color:inherit}
-h1,h2,h3{font-family:'Unbounded',sans-serif;font-weight:600;line-height:1.15;margin:0}
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
-section{padding:36px 0}
-#start{padding-top:4px}
-nav{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:24px 0}
-.logo{font-family:'Unbounded',sans-serif;font-weight:600;font-size:26px;text-decoration:none}
-.logo b{color:var(--red)}
-.logo small{font-size:11px;letter-spacing:.5em;color:var(--red);margin-left:6px}
-.links{display:flex;flex-wrap:wrap;gap:22px;align-items:center;font-weight:800;font-size:15px}
-.links a{text-decoration:none}
-.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font:800 16px 'Manrope',sans-serif;padding:15px 30px;border-radius:999px;border:0;cursor:pointer}
-.btn:hover{filter:brightness(1.1)}
-.hero{padding-bottom:8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:center;padding-top:32px}
-.hero h1{font-size:clamp(32px,5vw,48px)}
-.hero h1 span{color:var(--red)}
-.hero h1 .flip{display:block;min-height:2.3em;transition:opacity .3s ease,transform .3s ease}
-.hero h1 .flip.out{opacity:0;transform:translateY(10px)}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-.hero p{font-size:19px;color:var(--muted);max-width:460px;margin:20px 0 28px}
-.orb{width:280px;height:280px;border-radius:50%;margin:auto;background:radial-gradient(circle at 35% 30%,#FF6A6E,#E5252A 45%,#7A0C10);animation:glow 4s ease-in-out infinite}
-@keyframes glow{0%,100%{box-shadow:0 0 90px 10px rgba(229,37,42,.35)}50%{box-shadow:0 0 140px 30px rgba(229,37,42,.55)}}
-@media (prefers-reduced-motion:reduce){.orb{animation:none;box-shadow:0 0 100px 15px rgba(229,37,42,.4)}html{scroll-behavior:auto}}
-.wave{display:block;width:100%;height:30px}
-h2{font-size:28px;margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.card{background:var(--card);border-radius:20px;padding:28px}
-.card .n{color:var(--red);font-family:'Unbounded',sans-serif}
-.card h3{font-size:18px;margin:10px 0 6px}
-.card p{margin:0;color:var(--muted)}
-.sample{background:var(--card);border-radius:20px;overflow:hidden}
-.sample div{height:120px}
-.sample p{margin:0;padding:18px 20px;font-weight:800}
-.sample small{display:block;color:var(--muted);font-weight:500}
-.start{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;align-items:start}
-.price{border:2px solid var(--red);border-radius:24px;padding:32px}
-.price .big{font-family:'Unbounded',sans-serif;font-size:44px}
-.price .big small{font-size:16px;color:var(--muted)}
-.price ul{padding-left:20px;color:var(--muted);margin:16px 0 0}
-form{background:var(--card);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px}
-label{display:flex;flex-direction:column;gap:6px;font-weight:800;font-size:14px}
-label span{font-weight:500;color:var(--muted)}
-input,textarea,select{font:500 16px 'Manrope',sans-serif;color:#fff;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px}
-input:focus,textarea:focus,select:focus{outline:2px solid var(--red);outline-offset:1px}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.hp{position:absolute;left:-9999px}
-.status{min-height:24px;font-weight:800;color:#FF8A8D}
-.note{font-size:13px;color:var(--muted);margin:0}
-.contact{background:var(--red);border-radius:28px;padding:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
-.contact h2{margin-bottom:12px}
-.contact .mail{display:inline-block;margin-top:16px;background:var(--bg);padding:14px 26px;border-radius:999px;font-weight:800;text-decoration:none}
-.contact form{background:var(--bg)}
-.carousel{position:relative}
-.track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px;border-radius:20px}
-.track::-webkit-scrollbar{display:none}
-.track:focus-visible{outline:2px solid var(--red);outline-offset:4px}
-.slide{flex:0 0 min(620px,88%);scroll-snap-align:center;margin:0}
-.frame{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.bar{display:flex;gap:6px;padding:10px 14px;background:#251f1c}
-.bar i{width:10px;height:10px;border-radius:50%;background:#4a403a}
-.frame img{display:block;width:100%;height:auto}
-figcaption{padding:12px 4px 0;font-weight:800}
-.ctrl{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:20px}
-.arrow{width:48px;height:48px;border-radius:50%;border:2px solid var(--red);background:transparent;color:#fff;font:800 20px 'Manrope',sans-serif;cursor:pointer}
-.arrow:hover{background:var(--red)}
-.dots{display:flex;gap:10px}
-.dots button{width:12px;height:12px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
-.dots button[aria-current="true"]{background:var(--red)}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:stretch}
-.price.basic{border-color:var(--line)}
-.price h3{font-size:20px;margin-bottom:6px}
-.price .desc{margin:12px 0 18px;color:var(--muted)}
-.price .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
-.price .ask{margin:18px 0 0;font-size:14px;color:var(--muted)}
-.kick{max-width:640px;margin:0 auto}
-select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#C9C2BD 50%),linear-gradient(135deg,#C9C2BD 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat}
-.price .was{font-size:.55em;color:var(--muted);margin-right:4px}
-.prio{display:flex;gap:12px;align-items:flex-start;background:rgba(229,37,42,.12);border:1px solid var(--red);border-radius:16px;padding:14px 16px;margin:18px 0 0;color:#fff;font-weight:800;font-size:15px;line-height:1.4}
-.prio svg{flex:0 0 22px;margin-top:2px}
-.prio span{display:block;color:var(--muted);font-weight:500;font-size:14px;margin-top:2px}
-.price .then{margin:18px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:18px}
-.price .then b{color:var(--red);font-family:'Unbounded',sans-serif}
-footer{padding:48px 0 56px;color:#8A817B;font-size:14px;border-top:1px solid var(--line)}
-label .lbl{font-weight:800;color:var(--text)}
-.lbl em{font-style:normal;font-weight:500;color:var(--muted);margin-left:6px}
-.foot{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
-.social{display:flex;gap:12px;justify-content:center}
-.social a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);color:var(--muted);text-decoration:none}
-.social a:hover{color:#fff;border-color:var(--red)}
-.social a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
-.flogo{display:flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1}
-.flogo .fl{font-family:'Unbounded',sans-serif;font-weight:600;font-size:56px;letter-spacing:-.02em;color:#fff}
-.flogo .fl b{color:var(--red)}
-.flogo .fw{font-family:'Unbounded',sans-serif;font-weight:600;font-size:13px;letter-spacing:.7em;margin:10px -.7em 0 0;color:var(--red)}
-.legal{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;font-weight:800;color:var(--muted)}
-.legal a{text-decoration:none}.legal a:hover,.foot a:hover{color:#fff}
-.foot p{margin:0;max-width:640px}
-
-</style>
+<title>SynthPage | Web design for local businesses in Portsmouth &amp; Chichester</title>
+<meta name="description" content="SynthPage designs and hosts clean, fast, mobile-friendly websites for local businesses. Basic from £150 setup plus £15/month. See a free mock-up before you decide anything.">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://synthpage.co.uk/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/display-bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/body-regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="/css/site.css">
+<script>document.documentElement.className+=" js"</script>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SynthPage">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="SynthPage | Web design for local businesses in Portsmouth &amp; Chichester">
+<meta property="og:description" content="SynthPage designs and hosts clean, fast, mobile-friendly websites for local businesses. Basic from £150 setup plus £15/month. See a free mock-up before you decide anything.">
+<meta property="og:url" content="https://synthpage.co.uk/">
+<meta property="og:image" content="https://synthpage.co.uk/images/og-image.png">
+<meta property="og:image:alt" content="SynthPage logo: a square wave above the name, on white with lime green">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SynthPage | Web design for local businesses in Portsmouth &amp; Chichester">
+<meta name="twitter:description" content="SynthPage designs and hosts clean, fast, mobile-friendly websites for local businesses. Basic from £150 setup plus £15/month. See a free mock-up before you decide anything.">
+<meta name="twitter:image" content="https://synthpage.co.uk/images/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://synthpage.co.uk/#organization","name":"SynthPage","alternateName":["Synth Page","SynthPage Web Design"],"url":"https://synthpage.co.uk/","logo":"https://synthpage.co.uk/images/logo-stacked.svg","image":"https://synthpage.co.uk/images/og-image.png","email":"contact@synthpage.co.uk","description":"SynthPage is a small web design studio on the south coast of England. It builds and hosts clean, fast, mobile-friendly websites for local businesses, with a free mock-up before you decide anything.","slogan":"Clean, fast websites for local businesses.","priceRange":"£15-£25 per month plus £150-£230 setup","areaServed":[{"@type":"City","name":"Portsmouth"},{"@type":"City","name":"Chichester"},{"@type":"AdministrativeArea","name":"Hampshire"},{"@type":"AdministrativeArea","name":"West Sussex"},{"@type":"Country","name":"United Kingdom"}],"knowsAbout":["Web design","Website hosting","One-page websites","Small business websites","Mobile-friendly websites","3D web animation"],"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"contact@synthpage.co.uk","availableLanguage":"English"},"makesOffer":[{"@type":"Offer","name":"Basic website","description":"A clean, fast, mobile-friendly website designed around your business and colours. Includes a free mock-up first, hosting, small updates and support.","price":"150.00","priceCurrency":"GBP","priceSpecification":[{"@type":"PriceSpecification","name":"One-off setup fee","price":"150.00","priceCurrency":"GBP"},{"@type":"UnitPriceSpecification","name":"Monthly hosting, small updates and support","price":"15.00","priceCurrency":"GBP","billingDuration":1,"unitCode":"MON"}],"itemOffered":{"@type":"Service","name":"Basic website design and hosting","serviceType":"Web design"}},{"@type":"Offer","name":"Immersive website","description":"Everything in Basic plus a custom 3D animation and priority support.","price":"230.00","priceCurrency":"GBP","priceSpecification":[{"@type":"PriceSpecification","name":"One-off setup fee","price":"230.00","priceCurrency":"GBP"},{"@type":"UnitPriceSpecification","name":"Monthly hosting, small updates and support","price":"25.00","priceCurrency":"GBP","billingDuration":1,"unitCode":"MON"}],"itemOffered":{"@type":"Service","name":"Immersive website design and hosting","serviceType":"Web design"}}]},{"@type":"WebSite","@id":"https://synthpage.co.uk/#website","url":"https://synthpage.co.uk/","name":"SynthPage","inLanguage":"en-GB","publisher":{"@id":"https://synthpage.co.uk/#organization"}},{"@type":"WebPage","@id":"https://synthpage.co.uk/#webpage","url":"https://synthpage.co.uk/","name":"SynthPage | Web design for local businesses in Portsmouth & Chichester","description":"SynthPage designs and hosts clean, fast, mobile-friendly websites for local businesses. Basic from £150 setup plus £15/month. See a free mock-up before you decide anything.","isPartOf":{"@id":"https://synthpage.co.uk/#website"},"about":{"@id":"https://synthpage.co.uk/#organization"},"inLanguage":"en-GB"},{"@type":"FAQPage","@id":"https://synthpage.co.uk/#faq","mainEntity":[{"@type":"Question","name":"How much does a website cost?","acceptedAnswer":{"@type":"Answer","text":"A Basic website has a one-off setup fee of £150, then £15 a month for hosting, small updates and support. An Immersive website has a one-off setup fee of £230 (usually £250), then £25 a month. We confirm the exact price in writing before we begin. Prices don’t include VAT because we aren’t VAT-registered."}},{"@type":"Question","name":"What do I get for the monthly fee?","acceptedAnswer":{"@type":"Answer","text":"Hosting, small updates and support, so your website stays online and up to date. You can cancel any time by emailing contact@synthpage.co.uk, and we’ll give you a copy of your site’s files if you ask."}},{"@type":"Question","name":"Will I see the website before I commit?","acceptedAnswer":{"@type":"Answer","text":"Yes. We build a mock-up first, with your business name and colours, and nothing is published until you approve it. The setup fee includes 2 rounds of changes to the mock-up."}},{"@type":"Question","name":"What’s the difference between Basic and Immersive?","acceptedAnswer":{"@type":"Answer","text":"A Basic website is clean, fast and mobile-friendly. An Immersive website includes everything in Basic plus a custom 3D animation that makes your business memorable, and priority support, so your requests go to the front of the queue."}},{"@type":"Question","name":"What do you need from me?","acceptedAnswer":{"@type":"Answer","text":"A few details about your business, plus any text, photos and your logo that you’d like us to use. If you don’t have these yet, tell us and we’ll talk through the options."}},{"@type":"Question","name":"Who owns my content?","acceptedAnswer":{"@type":"Answer","text":"You do. You keep ownership of your own text, images and logos. We may show screenshots of the finished website in our portfolio unless you tell us not to."}},{"@type":"Question","name":"Do you build online shops or booking systems?","acceptedAnswer":{"@type":"Answer","text":"SynthPage focuses on clean, simple business websites. If you need something more complex, email us and we’ll tell you honestly whether we’re the right fit."}},{"@type":"Question","name":"Where are you based, and who do you work with?","acceptedAnswer":{"@type":"Answer","text":"We’re on the south coast of England and work with local businesses around Portsmouth and Chichester, such as tradespeople, salons, cafés, groomers, studios and shops. Because websites are delivered online, we can also work with businesses elsewhere in the UK."}}]}]}</script>
 </head>
 <body>
-<div class="wrap">
-<nav>
-<a class="logo" href="#top">lum<b>o</b><small>WEB</small></a>
-<div class="links"><a href="#how">How it works</a><a href="#work">Work</a><a href="immersive/">Immersive sites</a><a href="#pricing">Pricing</a><a class="btn" href="#contact">Contact</a></div>
-</nav>
-<header class="hero" id="top">
+<header class="nav" id="nav"><a class="brand" href="/" aria-label="SynthPage home"><img src="/images/logo.svg" alt="SynthPage" width="170" height="34"></a>
+<button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="links"><i></i><i></i><i></i></button>
+<nav class="links" id="links" aria-label="Main"><a href="/#how" >How it works</a><a href="/#work">Work</a><a href="/immersive/">Immersive</a><a href="/#pricing">Pricing</a><a href="/about">About</a><a class="btn sm" href="/#contact">Contact</a></nav></header>
+<main>
+<header class="hero" id="top"><div class="wrap">
 <div>
-<h1>Websites that put your business <span class="sr">in the light.</span><span class="flip" id="flip" aria-hidden="true">in the light.</span></h1>
-<p>Clean, fast one-page websites for local businesses. See a free mock-up of yours before you decide anything.</p>
-<a class="btn" href="#start">Start your website</a>
+<span class="eyebrow rv">Web design · Portsmouth, Chichester &amp; the South Coast</span>
+<h1 class="rv" style="--d:.05s">Clean, fast websites for <span class="hl">local businesses.</span></h1>
+<p class="lead rv" style="--d:.1s">SynthPage designs and hosts simple, beautiful websites that make your business easy to find and easy to trust. See a free mock-up of yours before you decide anything.</p>
+<div class="cta rv" style="--d:.15s"><a class="btn" href="#start">Start your website</a><a class="btn ghost" href="#work">See sample work</a></div>
 </div>
-<div class="orb" role="img" aria-label="Glowing red circle"></div>
-</header>
-</div>
+<div class="seq-wrap rv" style="--d:.2s" aria-hidden="true"><div class="seq"><div class="seq-bar"><span><b></b>Signal</span><span>Square · Sine</span></div><div class="seq-grid" id="seq"></div></div></div>
+</div></header>
 
-<svg class="wave" viewBox="0 0 1000 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 15 C 83 0, 167 30, 250 15 S 417 0, 500 15 S 667 30, 750 15 S 917 0, 1000 15" fill="none" stroke="#E5252A" stroke-width="2" opacity=".6"/></svg>
+<div class="wrap" style="margin-top:-8px"><div class="strip rv"><div>Free mock-up first</div><div>Hosting included</div><div>Mobile-friendly</div><div>Cancel any time</div></div></div>
 
 <section id="how"><div class="wrap">
-<h2>How it works</h2>
-<div class="grid">
-<div class="card"><span class="n">01</span><h3>We chat</h3><p>Tell us about your business and what you need.</p></div>
-<div class="card"><span class="n">02</span><h3>We build it</h3><p>You see a mock-up first, with your name and colours.</p></div>
-<div class="card"><span class="n">03</span><h3>You go live</h3><p>Approve it and it’s online, with hosting looked after.</p></div>
-</div>
-</div></section>
+<div class="head rv"><span class="eyebrow">How it works</span><h2>From first chat to live website.</h2></div>
+<div class="grid3">
+<div class="block rv"><span class="n">01</span><h3>We chat</h3><p>Tell us about your business and what you need.</p></div>
+<div class="block rv" style="--d:.08s"><span class="n">02</span><h3>We build it</h3><p>You see a mock-up first, with your name and colours.</p></div>
+<div class="block rv" style="--d:.16s"><span class="n">03</span><h3>You go live</h3><p>Approve it and it’s online, with hosting looked after.</p></div>
+</div></div></section>
+
+<div class="wavebar" aria-hidden="true"></div>
 
 <section id="work"><div class="wrap">
-<h2>Sample work</h2>
-<div class="carousel">
-<div class="track" id="track" tabindex="0" role="region" aria-label="Sample websites, scroll sideways to see more">
-<figure class="slide"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="images/sample-pizza.jpg" alt="Sample website for a pizza shop with a cartoon pizza logo" loading="lazy"></div><figcaption>Pizza shop</figcaption></figure>
-<figure class="slide"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="images/sample-groomer.jpg" alt="Sample website for a dog grooming business" loading="lazy"></div><figcaption>Dog groomer</figcaption></figure>
-<figure class="slide"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="images/sample-plumber.jpg" alt="Sample website for a plumber" loading="lazy"></div><figcaption>Plumber</figcaption></figure>
-<figure class="slide"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="images/sample-studio.jpg" alt="Sample website for a recording studio" loading="lazy"></div><figcaption>Recording studio</figcaption></figure>
-<figure class="slide"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="images/sample-electrician.jpg" alt="Sample website for an electrician" loading="lazy"></div><figcaption>Electrician</figcaption></figure>
+<div class="head rv"><span class="eyebrow">Sample work</span><h2>Websites for every kind of local business.</h2><p>Example designs for the kinds of businesses we work with. Swipe or use the arrows to see more.</p></div>
+<div class="carousel rv"><div class="track" id="track" tabindex="0" role="region" aria-label="Sample websites, scroll sideways to see more">
+<figure class="slide"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="/images/sample-pizza.jpg" alt="Sample website for a pizza shop with a cartoon pizza logo" loading="lazy"></div><figcaption>Pizza shop</figcaption></figure><figure class="slide"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="/images/sample-groomer.jpg" alt="Sample website for a dog grooming business" loading="lazy"></div><figcaption>Dog groomer</figcaption></figure><figure class="slide"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="/images/sample-plumber.jpg" alt="Sample website for a plumber" loading="lazy"></div><figcaption>Plumber</figcaption></figure><figure class="slide"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="/images/sample-studio.jpg" alt="Sample website for a recording studio" loading="lazy"></div><figcaption>Recording studio</figcaption></figure><figure class="slide"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="/images/sample-electrician.jpg" alt="Sample website for an electrician" loading="lazy"></div><figcaption>Electrician</figcaption></figure>
 </div>
-<div class="ctrl">
-<button class="arrow" id="prev" type="button" aria-label="Previous sample">←</button>
-<div class="dots" id="dots"></div>
-<button class="arrow" id="next" type="button" aria-label="Next sample">→</button>
-</div>
-</div>
+<div class="ctrl"><button class="arrow" id="prev" type="button" aria-label="Previous sample">←</button><div class="dots" id="dots"></div><button class="arrow" id="next" type="button" aria-label="Next sample">→</button></div></div>
 </div></section>
 
-<section id="pricing"><div class="wrap">
-<h2>Pricing</h2>
+<section id="pricing" class="soft"><div class="wrap">
+<div class="head rv"><span class="eyebrow">Pricing</span><h2>Simple pricing. No surprises.</h2><p>A one-off setup fee, then a small monthly fee for hosting, updates and support. Cancel any time.</p></div>
 <div class="plans">
-<div class="price basic">
-<span class="tag" style="color:var(--muted)">Basic</span>
+<article class="plan rv"><header><span>Basic</span><span>Most popular</span></header><div class="in">
 <h3>Basic website</h3>
-<div class="big">£130 <small>setup fee</small></div>
-<p class="desc">A clean, fast website with smooth, normal sliding pages. Everything your customers need, nothing they don’t.</p>
-<p class="then"><b>then £15/month</b><br><span style="color:var(--muted)">for hosting, small updates and support. Cancel any time.</span></p>
-<ul><li>Clean, mobile-friendly site</li><li>Designed around your business and colours</li><li>A free mock-up to look at first</li></ul>
-<p class="ask">Setup starts from £130. We’ll confirm the exact price before we begin.</p>
-</div>
-<div class="price">
-<span class="tag">Immersive</span>
+<div class="price">£150<small>setup fee</small></div>
+<p>A clean, fast website with smooth, normal sliding pages. Everything your customers need, nothing they don’t.</p>
+<div class="then"><b>then £15/month</b><span>for hosting, small updates and support. Cancel any time.</span></div>
+<ul class="tick"><li>Clean, mobile-friendly site</li><li>Designed around your business and colours</li><li>A free mock-up to look at first</li></ul>
+<p class="fine">Setup starts from £150. We’ll confirm the exact price before we begin.</p>
+<a class="btn" href="#start" data-plan="Basic website (from £150)">Choose Basic</a>
+</div></article>
+<article class="plan feat rv" style="--d:.1s"><header><span>Immersive</span><span>Includes 3D</span></header><div class="in">
 <h3>Immersive website</h3>
-<div class="big"><s class="was"><span class="sr">Was </span>£250</s> <span class="sr">now </span>£230 <small>setup fee</small></div>
-<p class="desc">Everything in Basic, plus a 3D animation on your website to captivate customers and make your business memorable.</p>
-<p class="then"><b>then £25/month</b><br><span style="color:var(--muted)">for hosting, small updates and support. Cancel any time.</span></p>
-<ul><li>Everything in the Basic website</li><li>An eye-catching 3D animation</li><li>A mock-up to look at first</li></ul>
-<div class="prio"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z" fill="#E5252A"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><div>Priority support included<span>Your questions and update requests go to the front of the queue.</span></div></div>
-<p class="ask">Interested? Choose “Immersive” in the form below and we’ll be in touch.</p>
+<div class="price"><s><span class="sr">Was </span>£250</s><span class="sr">now </span>£230<small>setup fee</small></div>
+<p>Everything in Basic, plus a 3D animation on your website to captivate customers and make your business memorable.</p>
+<div class="then"><b>then £25/month</b><span>for hosting, small updates and support. Cancel any time.</span></div>
+<ul class="tick"><li>Everything in the Basic website</li><li>An eye-catching 3D animation</li><li>A mock-up to look at first</li></ul>
+<div class="prio"><div>Priority support included<span>Your questions and update requests go to the front of the queue.</span></div></div>
+<a class="btn" href="#start" data-plan="Immersive website (£230)">Choose Immersive</a>
+</div></article>
 </div>
-</div>
+<p class="fine rv" style="margin-top:20px">Prices are in pounds sterling and don’t include VAT, as we aren’t VAT-registered. See the <a href="/immersive/">Immersive page</a> to explore the 3D style.</p>
 </div></section>
 
-<section id="start"><div class="wrap">
-<form class="kick" data-form="Project kick-off" novalidate>
-<h2 style="font-size:24px;margin-bottom:4px">Kick-start your design</h2>
-<input type="hidden" name="form_type" value="Project kick-off">
-<input type="hidden" name="subject" value="New Lumo Web project enquiry">
+<section id="about"><div class="wrap about">
+<div>
+<div class="head rv"><span class="eyebrow">About SynthPage</span><h2>A small studio that keeps things clean.</h2></div>
+<p class="rv"><strong>SynthPage is a small web design studio on the south coast of England.</strong> We build clean, fast, mobile-friendly websites for local businesses such as tradespeople, salons, cafés, groomers, studios and shops, and we look after the hosting so you don’t have to.</p>
+<p class="rv">The name comes from how a synthesiser works: it takes a raw signal and shapes it into something clean and clear. That’s what we do with your business’s presence online.</p>
+<p class="rv">We start with a free mock-up, so you can see your website before you decide anything. Once you approve it, we publish it and keep it running for a simple monthly fee.</p>
+<p class="rv"><a href="/about"><strong>Read more about us →</strong></a></p>
+</div>
+<dl class="facts rv" style="--d:.1s">
+<div><dt>What</dt><dd>Web design and hosting for small businesses</dd></div>
+<div><dt>Who for</dt><dd>Local businesses, sole traders, clubs and studios</dd></div>
+<div><dt>Where</dt><dd>Portsmouth, Chichester and the South Coast, UK. Delivered online anywhere in the UK.</dd></div>
+<div><dt>Basic</dt><dd>£150 setup, then £15 a month</dd></div>
+<div><dt>Immersive</dt><dd>£230 setup, then £25 a month, with 3D animation and priority support</dd></div>
+<div><dt>Contact</dt><dd><a href="mailto:contact@synthpage.co.uk">contact@synthpage.co.uk</a></dd></div>
+</dl>
+</div></section>
+
+<section id="faq" class="soft"><div class="wrap">
+<div class="head rv"><span class="eyebrow">Questions</span><h2>Frequently asked questions.</h2></div>
+<div class="faq rv">
+<details><summary>How much does a website cost?</summary><p>A Basic website has a one-off setup fee of £150, then £15 a month for hosting, small updates and support. An Immersive website has a one-off setup fee of £230 (usually £250), then £25 a month. We confirm the exact price in writing before we begin. Prices don’t include VAT because we aren’t VAT-registered.</p></details>
+<details><summary>What do I get for the monthly fee?</summary><p>Hosting, small updates and support, so your website stays online and up to date. You can cancel any time by emailing contact@synthpage.co.uk, and we’ll give you a copy of your site’s files if you ask.</p></details>
+<details><summary>Will I see the website before I commit?</summary><p>Yes. We build a mock-up first, with your business name and colours, and nothing is published until you approve it. The setup fee includes 2 rounds of changes to the mock-up.</p></details>
+<details><summary>What’s the difference between Basic and Immersive?</summary><p>A Basic website is clean, fast and mobile-friendly. An Immersive website includes everything in Basic plus a custom 3D animation that makes your business memorable, and priority support, so your requests go to the front of the queue.</p></details>
+<details><summary>What do you need from me?</summary><p>A few details about your business, plus any text, photos and your logo that you’d like us to use. If you don’t have these yet, tell us and we’ll talk through the options.</p></details>
+<details><summary>Who owns my content?</summary><p>You do. You keep ownership of your own text, images and logos. We may show screenshots of the finished website in our portfolio unless you tell us not to.</p></details>
+<details><summary>Do you build online shops or booking systems?</summary><p>SynthPage focuses on clean, simple business websites. If you need something more complex, email us and we’ll tell you honestly whether we’re the right fit.</p></details>
+<details><summary>Where are you based, and who do you work with?</summary><p>We’re on the south coast of England and work with local businesses around Portsmouth and Chichester, such as tradespeople, salons, cafés, groomers, studios and shops. Because websites are delivered online, we can also work with businesses elsewhere in the UK.</p></details>
+</div></div></section>
+
+<section id="start" class="soft"><div class="wrap">
+<div class="contact">
+<form class="panel rv" data-form="Project kick-off" novalidate>
+<h2 style="font-size:30px;margin-bottom:4px">Kick-start your design</h2>
+<input type="hidden" name="form_type" value="Project kick-off"><input type="hidden" name="subject" value="New SynthPage project enquiry">
 <label>Your name<input name="name" autocomplete="name" required></label>
 <label>Company<input name="company" autocomplete="organization" required></label>
-<div class="two">
-<label><span class="lbl">Phone <em>optional</em></span><input name="phone" type="tel" autocomplete="tel"></label>
-<label><span class="lbl">Email</span><input name="email" type="email" autocomplete="email" required></label>
-</div>
-<label>Which are you interested in?<select name="package"><option>Basic website (from £130)</option><option>Immersive website (£230)</option><option>Not sure yet</option></select></label>
+<div class="two"><label><span class="lbl">Phone <em>optional</em></span><input name="phone" type="tel" autocomplete="tel"></label>
+<label>Email<input name="email" type="email" autocomplete="email" required></label></div>
+<label>Which are you interested in?<select name="package"><option>Basic website (from £150)</option><option>Immersive website (£230)</option><option>Not sure yet</option></select></label>
 <div class="hp" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
 <button class="btn" type="submit">Send my details</button>
 <div class="status" role="status" aria-live="polite"></div>
 <p class="note">We’ll only use your details to reply about your website, and we won’t share them.</p>
 </form>
-</div></section>
-
-<section id="contact"><div class="wrap">
-<div class="contact">
-<div>
-<h2>Need help or have a question?</h2>
-<p style="margin:0">Email us any time and we’ll get back to you.</p>
-<a class="mail" href="mailto:contact@lumoweb.uk">contact@lumoweb.uk</a>
-</div>
-<form data-form="General enquiry" novalidate>
-<input type="hidden" name="form_type" value="General enquiry">
-<input type="hidden" name="subject" value="New Lumo Web message">
+<div id="contact" class="rv" style="--d:.1s;display:flex;flex-direction:column;gap:24px">
+<div class="panel lime"><h2 style="font-size:30px">Need help or have a question?</h2><p>Email us any time and we’ll get back to you.</p><a class="mail" href="mailto:contact@synthpage.co.uk">contact@synthpage.co.uk</a></div>
+<form class="panel" data-form="General enquiry" novalidate>
+<input type="hidden" name="form_type" value="General enquiry"><input type="hidden" name="subject" value="New SynthPage message">
 <label>Name<input name="name" autocomplete="name" required></label>
 <label>Email<input name="email" type="email" autocomplete="email" required></label>
 <label>Message<textarea name="message" rows="4" required></textarea></label>
 <div class="hp" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
 <button class="btn" type="submit">Send message</button>
 <div class="status" role="status" aria-live="polite"></div>
-</form>
-</div>
-</div></section>
+</form></div>
+</div></div></section>
 
+</main>
 <footer><div class="wrap foot">
-<a class="flogo" href="#top" aria-label="Lumo Web, back to top"><span class="fl">lum<b>o</b></span><span class="fw">WEB</span></a>
-<div class="social">
-<a href="https://www.instagram.com/lumoweb.uk/" target="_blank" rel="noopener" aria-label="Lumo Web on Instagram, @lumoweb.uk" title="Instagram @lumoweb.uk"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
-<a href="https://www.tiktok.com/@lumoweb.uk" target="_blank" rel="noopener" aria-label="Lumo Web on TikTok, @lumoweb.uk" title="TikTok @lumoweb.uk"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
-</div>
-<div class="legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="cookies.html">Cookie Notice</a></div>
-<p>© 2026 Lumo Web · lumoweb.uk · <a href="mailto:contact@lumoweb.uk">contact@lumoweb.uk</a></p>
+<div><a href="/" aria-label="SynthPage, back to home"><img src="/images/logo-stacked.svg" alt="SynthPage" width="150" height="76" style="height:76px;width:auto"></a>
+<p>Clean, fast websites for local businesses. Based on the south coast of England.</p></div>
+<nav class="fnav" aria-label="Footer"><a href="/about">About</a><a href="/immersive/">Immersive</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/cookies">Cookie Notice</a></nav>
+<div class="copy">© 2026 SynthPage · synthpage.co.uk · <a href="mailto:contact@synthpage.co.uk">contact@synthpage.co.uk</a></div>
 </div></footer>
-
-<script>
-const ACCESS_KEY="3e4a5492-6895-48c5-baa2-1a1f72392342";
-document.querySelectorAll("form[data-form]").forEach(f=>{
-f.addEventListener("submit",async e=>{
-e.preventDefault();
-const s=f.querySelector(".status");
-if(!f.checkValidity()){f.reportValidity();return;}
-const d=new FormData(f);
-if(d.get("website")){return;}
-if(!ACCESS_KEY||ACCESS_KEY==="YOUR_ACCESS_KEY"){
-const body=[...d.entries()].filter(([k])=>!["website","subject","form_type"].includes(k)).map(([k,v])=>k+": "+v).join("\n");
-location.href="mailto:contact@lumoweb.uk?subject="+encodeURIComponent("Lumo Web: "+f.dataset.form)+"&body="+encodeURIComponent(body);
-s.textContent="Opening your email app…";return;}
-d.delete("website");
-d.append("access_key",ACCESS_KEY);
-d.append("from_name",d.get("name")||"Website visitor");
-s.style.color="#C9C2BD";s.textContent="Sending…";
-try{
-const r=await fetch("https://api.web3forms.com/submit",{method:"POST",body:d,headers:{Accept:"application/json"}});
-const j=await r.json();
-if(!r.ok||!j.success)throw new Error();
-f.reset();s.style.color="#8FE3A6";s.textContent="Thanks! We’ll be in touch soon.";
-}catch(_){s.style.color="#FF8A8D";s.textContent="Sorry, that didn’t send. Please email contact@lumoweb.uk.";}
-});
-});
-(function(){
-const track=document.getElementById("track"),dots=document.getElementById("dots");
-const slides=[...track.children];
-const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
-const step=()=>slides[0].offsetWidth+20;
-const go=i=>track.scrollTo({left:Math.max(0,Math.min(slides.length-1,i))*step(),behavior:reduce?"auto":"smooth"});
-const cur=()=>Math.round(track.scrollLeft/step());
-slides.forEach((s,i)=>{const b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Show sample "+(i+1));b.onclick=()=>go(i);dots.appendChild(b);});
-const mark=()=>[...dots.children].forEach((b,i)=>b.setAttribute("aria-current",i===cur()));
-track.addEventListener("scroll",mark,{passive:true});mark();
-document.getElementById("prev").onclick=()=>go(cur()-1);
-document.getElementById("next").onclick=()=>go(cur()+1);
-track.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){e.preventDefault();go(cur()+1);}if(e.key==="ArrowLeft"){e.preventDefault();go(cur()-1);}});
-})();
-
-(function(){
-const el=document.getElementById("flip");
-const words=["in the light.","on the map.","top of the search page.","in front of customers.","ahead of the crowd.","in every pocket."];
-if(!el||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
-let i=0;
-setInterval(()=>{
-el.classList.add("out");
-setTimeout(()=>{i=(i+1)%words.length;el.textContent=words[i];el.classList.remove("out");},300);
-},2200);
-})();
-</script>
+<script src="/js/site.js" defer></script>
 </body>
 </html>

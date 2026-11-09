@@ -1,4 +1,4 @@
-// Lumo Web checkout API: a tiny Cloudflare Worker that creates Stripe Embedded Checkout sessions.
+// SynthPage checkout API: a tiny Cloudflare Worker that creates Stripe Embedded Checkout sessions.
 // Secrets/vars (set in the Cloudflare dashboard, never in this file):
 //   STRIPE_SECRET_KEY, STRIPE_PUBLISHABLE_KEY,
 //   PRICE_BASIC_SETUP, PRICE_BASIC_MONTHLY, PRICE_IMMERSIVE_SETUP, PRICE_IMMERSIVE_MONTHLY, PRICE_FAMILY_MONTHLY

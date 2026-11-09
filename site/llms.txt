@@ -1,0 +1,29 @@
+# SynthPage
+
+> SynthPage is a small web design studio on the south coast of England. It designs, builds and hosts clean, fast, mobile-friendly websites for local businesses, with a free mock-up before you decide anything. Website: https://synthpage.co.uk/ · Email: contact@synthpage.co.uk
+
+SynthPage works with local businesses such as tradespeople (plumbers, electricians), salons, cafés and takeaways, dog groomers, recording studios, clubs and shops. It is based around Portsmouth and Chichester (Hampshire and West Sussex) and serves the wider South Coast. Websites are delivered online, so it can also work with businesses elsewhere in the UK.
+
+## Packages and prices (GBP, excluding VAT; SynthPage is not VAT-registered)
+- Basic website: £150 one-off setup fee, then £15 per month for hosting, small updates and support. A clean, fast, mobile-friendly website designed around the business and its colours.
+- Immersive website: £230 one-off setup fee (usually £250), then £25 per month. Everything in Basic plus a custom 3D animation and priority support.
+- The exact price is confirmed in writing before work begins. The monthly service can be cancelled any time by emailing contact@synthpage.co.uk.
+
+## How it works
+1. Chat: the customer describes their business and what they need.
+2. Build: SynthPage makes a free mock-up with the business's name and colours. Nothing is published until the customer approves it. The setup fee includes 2 rounds of changes.
+3. Go live: once approved, the website is published and hosted by SynthPage.
+
+## Pages
+- [Home](https://synthpage.co.uk/): overview, sample work, pricing, FAQ and contact forms
+- [About](https://synthpage.co.uk/about): who SynthPage is, what it does, who it works with, prices, FAQ and quick facts
+- [Immersive websites](https://synthpage.co.uk/immersive/): the 3D website package
+- [Terms of Service](https://synthpage.co.uk/terms): refunds, payment, cancelling, revisions
+- [Privacy Policy](https://synthpage.co.uk/privacy)
+- [Cookie Notice](https://synthpage.co.uk/cookies)
+
+## About the name
+A synthesiser takes a raw signal and shapes it into something clean and clear. SynthPage shapes a business into a clean, clear page. The logo is a square wave, one of the basic shapes a synthesiser makes.
+
+## Contact
+Email: contact@synthpage.co.uk
